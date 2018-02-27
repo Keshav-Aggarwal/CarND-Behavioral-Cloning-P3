@@ -90,14 +90,13 @@ To combat the overfitting, I included the 3 dropout layers.
 The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track like the turns after the bridge, to improve the driving behavior in these cases, I generated recovery data and included that in training.
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
-After this I tried with the track two and model was not able to drive at all. Then I generated data for the track two and trained to that data leading car to drive a bit better on track two.
+After this I tried with the track two and model was not able to drive at all.
 
 #### 2. Final Model Architecture
 
 The final model architecture (model.py lines ) consisted of a convolution neural network with the following layers and layer sizes:
 
-
-
+![alt text](images/model.jpg)
 
 
 
@@ -128,9 +127,5 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 After the collection process, I had 132352 number of data points. Image loading and image flipping is done inside the generator. I then preprocessed this data by dividing the data by 127.5 and then substracting it from 1. After that I crop the image by 58 pixel from the top and 24 pixel from the bottom to remove the sky and the car hood from image.
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. Shuffling is done on complete dataset as well as on the output of the generator, as in generator we are flipping images, shuffling was needed.
-
-To Run the car on track two I generated data on the track two and then trained the model for this track also.
-
-![alt text](images/center_2018_02_27_17_35_09_048.jpg)
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 3 as after that loss was not decreading significantly. I used an adam optimizer so that manually training the learning rate wasn't necessary.
