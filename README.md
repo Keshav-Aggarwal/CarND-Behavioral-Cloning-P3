@@ -131,6 +131,6 @@ I finally randomly shuffled the data set and put 20% of the data into a validati
 
 To Run the car on track two I generated data on the track two and then trained the model for this track also.
 
-![alt text][images/center_2018_02_25_17_35_09_048.jpg]
+![alt text][images/center_2018_02_27_17_35_09_048.jpg]
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 3 as after that loss was not decreading significantly. I used an adam optimizer so that manually training the learning rate wasn't necessary.
