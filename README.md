@@ -122,8 +122,8 @@ result_indices_zero = np.random.choice(zero_indices[0], int(len(zero_indices[0])
 
 To augment the data sat, I also flipped images and angles thinking that this would double the data and it will kind of generate data like driving in anti-clockwise direction. For example, here is an image that has then been flipped:
 
-![alt text][images/center_2018_02_23_14_19_52_063.jpg]
-![alt text][images/center_2018_02_23_14_19_52_063_flipped.jpg]
+![alt text](images/center_2018_02_23_14_19_52_063.jpg)
+![alt text](images/center_2018_02_23_14_19_52_063_flipped.jpg)
 
 After the collection process, I had 132352 number of data points. Image loading and image flipping is done inside the generator. I then preprocessed this data by dividing the data by 127.5 and then substracting it from 1. After that I crop the image by 58 pixel from the top and 24 pixel from the bottom to remove the sky and the car hood from image.
 
@@ -131,6 +131,6 @@ I finally randomly shuffled the data set and put 20% of the data into a validati
 
 To Run the car on track two I generated data on the track two and then trained the model for this track also.
 
-![alt text][images/center_2018_02_27_17_35_09_048.jpg]
+![alt text](images/center_2018_02_27_17_35_09_048.jpg)
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 3 as after that loss was not decreading significantly. I used an adam optimizer so that manually training the learning rate wasn't necessary.
