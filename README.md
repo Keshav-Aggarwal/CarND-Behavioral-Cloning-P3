@@ -105,22 +105,25 @@ The final model architecture (model.py lines ) consisted of a convolution neural
 
 To capture good driving behavior, I first recorded two laps on Track one using center lane driving. Here is an example image of center lane driving:
 
-![alt text][image2]
+![alt text](images/center_2018_02_23_14_17_46_967.jpg)
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center after bridge so that the vehicle would learn to turn around from the dirt after bridge. These images show what a recovery looks like starting from ... :
 
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
+![alt text](images/center_2018_02_23_14_18_42_095.jpg)
+![alt text](images/center_2018_02_23_14_18_42_705.jpg)
+![alt text](images/center_2018_02_23_14_18_44_232.jpg)
 
 Then I repeated this process on track two in order to get more data points.
 
 Then after loading the data I removed 75% of zero data as 0 data will introduce more data while flipping and taking left and right images for the same image.
+``` sh
+result_indices_zero = np.random.choice(zero_indices[0], int(len(zero_indices[0])/4))
+```
 
 To augment the data sat, I also flipped images and angles thinking that this would double the data and it will kind of generate data like driving in anti-clockwise direction. For example, here is an image that has then been flipped:
 
-![alt text][image6]
-![alt text][image7]
+![alt text][images/center_2018_02_23_14_19_52_063.jpg]
+![alt text][images/center_2018_02_23_14_19_52_063_flipped.jpg]
 
 After the collection process, I had 132352 number of data points. Image loading and image flipping is done inside the generator. I then preprocessed this data by dividing the data by 127.5 and then substracting it from 1. After that I crop the image by 58 pixel from the top and 24 pixel from the bottom to remove the sky and the car hood from image.
 
